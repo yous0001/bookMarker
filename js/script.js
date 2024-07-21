@@ -20,14 +20,19 @@ function reset(){
 }
 
 function addBook(){
-    book={
-        bookName:nameField.value,
-        siteUrl:urlField.value
+    if(validation()){
+        book={
+            bookName:nameField.value,
+            siteUrl:urlField.value
+        }
+        bookList.push(book)
+        localStorage.setItem("bookList",JSON.stringify(bookList))
+        display()
+        reset()
     }
-    bookList.push(book)
-    localStorage.setItem("bookList",JSON.stringify(bookList))
-    console.log(bookList);
-    display()
+    else{
+        window.alert("validation failed")
+    }
 }
 
 function display(){
@@ -37,7 +42,7 @@ function display(){
             <tr>
                 <td>${i+1}</td>
                 <td>${bookList[i].bookName}</td>
-                <td><button class="btn  btn-visit text-white"><i class="fa-solid fa-eye me-2"></i>Visit</button></td>
+                <td><button class="btn  btn-visit text-white" onclick="window.location.href='https:${bookList[i].siteUrl}';"><i class="fa-solid fa-eye me-2"></i>Visit</button></td>
                 <td><button class="btn  btn-danger text-white"><i class="fa-solid fa-trash me-2"></i>Delete</button></td>
             </tr>`
     }
@@ -76,10 +81,31 @@ function isUrlValid(){
         return true
     }
     else{
-        document.getElementById("trueicon-name").style.display="none"
-        document.getElementById("erroricon-name").style.display="block"
+        document.getElementById("trueicon-url").style.display="none"
+        document.getElementById("erroricon-url").style.display="block"
         urlField.classList.remove("true-field")
         urlField.classList.add("false-field")
+        return false
+    }
+}
+
+function isNameUnrepeated(){
+    let unrepeated=true;
+    let bookname=nameField.value
+    for(let i=0;i<bookList.length;i++){
+        if(bookList[i].bookName==bookname){
+            console.log("repeat");
+            unrepeated=false;
+        }
+    }
+    return unrepeated;
+}
+
+function validation(){
+    if(isNameUnrepeated()&&isNameValid()&&isUrlValid()){
+        return true
+    }
+    else{
         return false
     }
 }

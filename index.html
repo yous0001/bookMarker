@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <div class="main py-5">
         <div class="container  d-flex flex-column align-items-center">
             <h1 class="py-2 position-relative">Bookmarker</h1>
@@ -22,7 +23,8 @@
                     <label class="pb-2 fw-semibold" for=""><i class="fa-solid fa-book-bookmark pe-2"></i> Site
                         Name</label>
                     <div class="input">
-                        <input type="text" onkeyup="isNameValid()" placeholder="bookmark Name" class="form-control" id="name">
+                        <input type="text" onkeyup="isNameValid()" placeholder="bookmark Name" class="form-control"
+                            id="name">
                         <i id="erroricon-name" class="fa-solid fa-circle-exclamation"></i>
                         <i id="trueicon-name" class="fa-solid fa-check"></i>
                     </div>
@@ -30,7 +32,8 @@
                 <div class="site-name w-100 d-flex flex-column justify-content-center">
                     <label class="pb-2 fw-semibold" for=""><i class="fa-solid fa-link pe-2"></i> Site URL</label>
                     <div class="input">
-                        <input type="text" onkeyup="isUrlValid()" placeholder="Website URL" class="form-control" id="url">
+                        <input type="text" onkeyup="isUrlValid()" placeholder="Website URL" class="form-control"
+                            id="url">
                         <i id="erroricon-url" class="fa-solid fa-circle-exclamation"></i>
                         <i id="trueicon-url" class="fa-solid fa-check"></i>
                     </div>
@@ -50,6 +53,33 @@
 
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="dialog-box position-fixed top-50 start-50 translate-middle bg-light w-50 p-4 rounded-3">
+        <div class="menu-bar me-2 d-flex justify-content-between align-items-center">
+            <div class="circles d-flex gap-1">
+                <div class="circle bg-danger"></div>
+                <div class="circle bg-warning"></div>
+                <div class="circle bg-success"></div>
+            </div>
+            <div class="close">
+                <button class="btn border-0" id="closeBtn">
+                    <i class="fa-solid fa-xmark close fs-3"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-content">
+            <p>Site Name or Url is not valid, Please follow the rules below :</p>
+            <ol class="rules list-unstyled m-0">
+                <li>
+                  <i class="text-danger fa-regular fa-circle-right p-2"></i>Site name must
+                  contain at least 3 characters
+                </li>
+                <li>
+                  <i class="text-danger fa-regular fa-circle-right p-2"></i>Site URL must be a
+                  valid one
+                </li>
+              </ol>
         </div>
     </div>
     <script src="./jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
