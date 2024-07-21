@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bookmarker</title>
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -14,31 +14,42 @@
     <div class="main py-5">
         <div class="container  d-flex flex-column align-items-center">
             <h1 class="py-2 position-relative">Bookmarker</h1>
-            <div class="book-form w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
-                <h2><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h2>
+            <div
+                class="book-form w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+                <h2><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i
+                        class="fa-solid fa-bookmark"></i></h2>
                 <div class="site-name w-100 d-flex flex-column justify-content-center">
-                <label class="pb-2 fw-semibold" for=""><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
-                <input type="text" placeholder="bookmark Name" class="form-control">
+                    <label class="pb-2 fw-semibold" for=""><i class="fa-solid fa-book-bookmark pe-2"></i> Site
+                        Name</label>
+                    <div class="input">
+                        <input type="text" placeholder="bookmark Name" class="form-control" id="name">
+                        <i id="erroricon-name" class="fa-solid fa-circle-exclamation"></i>
+                        <i id="trueicon-name" class="fa-solid fa-check"></i>
+                    </div>
                 </div>
                 <div class="site-name w-100 d-flex flex-column justify-content-center">
                     <label class="pb-2 fw-semibold" for=""><i class="fa-solid fa-link pe-2"></i> Site URL</label>
-                    <input type="text" placeholder="Website URL" class="form-control">
+                    <div class="input">
+                        <input type="text" placeholder="Website URL" class="form-control" id="url">
+                        <i id="erroricon-url" class="fa-solid fa-circle-exclamation"></i>
+                        <i id="trueicon-url" class="fa-solid fa-check"></i>
+                    </div>
                 </div>
                 <button class="btn btn-submit px-5" id="submitBtn">Submit</button>
             </div>
-                <table class="table mt-4 text-center bg-light">
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Website Name</th>
-                            <th>visit</th>
-                            <th>delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <table class="table mt-4 text-center bg-light">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Website Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="./jquery/code.jquery.com_jquery-3.7.0.min.js"></script>

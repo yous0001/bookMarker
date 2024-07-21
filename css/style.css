@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap');
 
-.main{
+body{
     background-color: #f7ecde;
 }
 .main h1{
@@ -49,3 +49,29 @@
     border-color: #352e28;
 }
 
+.btn-visit{
+    background-color: #9eb23b;
+}
+.btn-visit:hover{
+    background-color: #8a9e23;
+}
+
+.input{
+    position: relative;
+}
+#erroricon-name,#erroricon-url{
+    color:#dc3545;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    display: none;
+    font-size: 20px;
+}
+#trueicon-name,#trueicon-url{
+    color:#198754;
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 5px;
+    display: none;
+}
