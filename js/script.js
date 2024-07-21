@@ -51,25 +51,35 @@ function isNameValid(){
     let nameRegex=/^[a-zA-Z ]{3,12}$/
     let bookname=nameField.value
     if(nameRegex.test(bookname)){
-        document.getElementById("trueicon-name").display="block"
-        document.getElementById("erroricon-name").display="none"
-        nameField.style.borderColor="#198754"
+        document.getElementById("trueicon-name").style.display="block"
+        document.getElementById("erroricon-name").style.display="none"
+        nameField.classList.add("true-field")
+        nameField.classList.remove("false-field")
         return true
     }
     else{
-        document.getElementById("trueicon-name").display="none"
-        document.getElementById("erroricon-name").display="block"
-        nameField.style.borderColor="#DC3545"
+        document.getElementById("trueicon-name").style.display="none"
+        document.getElementById("erroricon-name").style.display="block"
+        nameField.classList.remove("true-field")
+        nameField.classList.add("false-field")
         return false
     }
 }
 function isUrlValid(){
-    let urlRegex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+    let urlRegex=/(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})?/
     let siteurl=urlField.value
     if(urlRegex.test(siteurl)){
+        document.getElementById("trueicon-url").style.display="block"
+        document.getElementById("erroricon-url").style.display="none"
+        urlField.classList.add("true-field")
+        urlField.classList.remove("false-field")
         return true
     }
     else{
+        document.getElementById("trueicon-name").style.display="none"
+        document.getElementById("erroricon-name").style.display="block"
+        urlField.classList.remove("true-field")
+        urlField.classList.add("false-field")
         return false
     }
 }

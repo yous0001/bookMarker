@@ -22,7 +22,7 @@
                     <label class="pb-2 fw-semibold" for=""><i class="fa-solid fa-book-bookmark pe-2"></i> Site
                         Name</label>
                     <div class="input">
-                        <input type="text" placeholder="bookmark Name" class="form-control" id="name">
+                        <input type="text" onkeyup="isNameValid()" placeholder="bookmark Name" class="form-control" id="name">
                         <i id="erroricon-name" class="fa-solid fa-circle-exclamation"></i>
                         <i id="trueicon-name" class="fa-solid fa-check"></i>
                     </div>
@@ -30,7 +30,7 @@
                 <div class="site-name w-100 d-flex flex-column justify-content-center">
                     <label class="pb-2 fw-semibold" for=""><i class="fa-solid fa-link pe-2"></i> Site URL</label>
                     <div class="input">
-                        <input type="text" placeholder="Website URL" class="form-control" id="url">
+                        <input type="text" onkeyup="isUrlValid()" placeholder="Website URL" class="form-control" id="url">
                         <i id="erroricon-url" class="fa-solid fa-circle-exclamation"></i>
                         <i id="trueicon-url" class="fa-solid fa-check"></i>
                     </div>
