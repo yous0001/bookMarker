@@ -92,11 +92,15 @@ body{
 }
 
 /*dialog box*/
+.dialog-box{
+    display: none;
+}
 .dialog-box p{
     font-family: "Bree Serif", serif;
     font-size: 21px;
     line-height: 1.3;
     color: #352e28;
+
 }
 .circle{
     width: 20px;

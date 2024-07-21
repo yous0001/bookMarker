@@ -31,8 +31,16 @@ function addBook(){
         reset()
     }
     else{
-        window.alert("validation failed")
+        document.getElementById("dialog-box").style.display="block";
+        document.getElementById("main").style.opacity=0.3;
     }
+}
+
+document.getElementById("closeBtn").addEventListener('click',close)
+
+function close(){
+    document.getElementById("dialog-box").style.display="none";
+    document.getElementById("main").style.opacity=1;
 }
 
 function display(){
@@ -43,13 +51,18 @@ function display(){
                 <td>${i+1}</td>
                 <td>${bookList[i].bookName}</td>
                 <td><button class="btn  btn-visit text-white" onclick="window.location.href='https:${bookList[i].siteUrl}';"><i class="fa-solid fa-eye me-2"></i>Visit</button></td>
-                <td><button class="btn  btn-danger text-white"><i class="fa-solid fa-trash me-2"></i>Delete</button></td>
+                <td><button class="btn  btn-danger text-white" onclick="deletebook(${i})"><i class="fa-solid fa-trash me-2"></i>Delete</button></td>
             </tr>`
     }
     document.getElementById("tablebody").innerHTML=cartona;
     
 }
 
+function deletebook(i){
+    bookList.splice(i,1)
+    localStorage.setItem("bookList",JSON.stringify(bookList))
+    display()
+}
 
 //validation
 function isNameValid(){
