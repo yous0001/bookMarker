@@ -4,7 +4,10 @@ let submitbtn=document.getElementById("submitBtn")
 let bookList=[];
 
 
-submitbtn.addEventListener('click',addBook)
+submitbtn.addEventListener('click',function(e){
+    e.stopPropagation()
+    addBook()
+})
 
 if(localStorage.getItem("bookList")===null){
     bookList=[]
@@ -20,6 +23,7 @@ function reset(){
 }
 
 function addBook(){
+
     if(validation()){
         book={
             bookName:nameField.value,
@@ -36,7 +40,10 @@ function addBook(){
     }
 }
 
-document.getElementById("closeBtn").addEventListener('click',close)
+document.getElementById("closeBtn").addEventListener('click',function(e){
+    e.stopPropagation()
+    close()
+})
 
 function close(){
     document.getElementById("dialog-box").style.display="none";
@@ -122,3 +129,11 @@ function validation(){
         return false
     }
 }
+
+document.addEventListener('click',function(e){
+    close()
+    e.stopPropagation()
+})
+document.getElementById("dialog-box").addEventListener('click',function(e){
+    e.stopPropagation()
+})
